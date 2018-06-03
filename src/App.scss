@@ -1,1 +1,9 @@
 @import './components/navBar/navBar.scss';
+
+.tp-body-content {
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 80px;
+}
