@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
+import NavbarLink from './NavbarLink'
 import logo from '../../images/vasavi_1.png';
 import signLogo from '../../images/user-circle.svg';
+import {Link} from 'react-router-dom';
+/*import Services from '../../containers/Services';
+import Home from '../../containers/Home';*/
+import './navBar.scss';
+
+const routes = [
+    { path: '/home', label: 'Home'},
+    { path: '/aboutUs', label: 'About Us' },
+    { path: '/services', label: 'Services' },
+    { path: '/events', label: 'Events' },
+    { path: '/donations', label: 'Donations' },
+    { path: '/contact', label: 'Contact' },
+];
 
 class NavBar extends Component {
     constructor() {
@@ -24,21 +38,19 @@ class NavBar extends Component {
         })
     }
     render() {
+        const navbarItems = routes.map((route) => (
+            <NavbarLink key={route.path} to={route.path} path={route.path} label={route.label}  />
+        ));
         return (
             <nav className="tp-nav-bar-container">
                 <div className="tp-nav-bar-wrapper">
                     <div className="tp-background-icon">
-                        <a href=""><img src={logo} alt=""/></a>
+                        <Link to="/">
+                            <img src={logo} />
+                        </Link>
                     </div>
-                    <div className="tp-na-bar-links">
-                        <ul>
-                            <li className="tp-nav-list"><a href="">
-                                <span className="fa fa-home"></span>Home</a></li>
-                            <li className="tp-nav-list"><a href="">About Us</a></li>
-                            <li className="tp-nav-list"><a href="">Services</a></li>
-                            <li className="tp-nav-list"><a href="">Events</a></li>
-                            <li className="tp-nav-list"><a href="">Donations</a></li>
-                        </ul>
+                    <div className="tp-nav-bar-links">
+                        {navbarItems}
                     </div>
                     <div className="tp-search-bar">
                         <input placeholder="Search" type="text"/>
@@ -79,3 +91,4 @@ class NavBar extends Component {
 }
 
 export default NavBar;
+

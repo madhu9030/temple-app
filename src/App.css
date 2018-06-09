@@ -35,29 +35,25 @@
   margin-right: auto;
   height: inherit; }
 
-.tp-na-bar-links {
+.tp-nav-bar-links {
   width: 620px;
   height: inherit;
   float: left; }
-  .tp-na-bar-links ul {
+  .tp-nav-bar-links ul {
     margin: 0;
     padding: 0;
     height: inherit; }
-  .tp-na-bar-links li {
+  .tp-nav-bar-links .tp-nav-list {
     color: white;
     display: inline-block;
     list-style-type: none;
-    margin: 16px 30px; }
-    .tp-na-bar-links li a {
-      display: block;
-      color: rgba(255, 255, 255, 0.75);
-      text-decoration: none;
-      background-color: transparent; }
-      .tp-na-bar-links li a:hover {
-        color: #fff;
-        text-decoration: none; }
-      .tp-na-bar-links li a span {
-        padding-right: 3px; }
+    margin: 16px 30px;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    background-color: transparent; }
+    .tp-nav-bar-links .tp-nav-list:hover {
+      color: #fff;
+      text-decoration: none; }
 
 .tp-search-bar {
   float: left;
