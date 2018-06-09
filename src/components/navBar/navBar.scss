@@ -57,7 +57,7 @@
         color: white;
         display: inline-block;
         list-style-type: none;
-        margin: 16px 30px;
+        margin: 16px 20px;
         color: rgba(255,255,255,0.75);
         text-decoration: none;
         background-color: transparent;
@@ -118,13 +118,26 @@
         border-radius: 50%;
     }
 }
+
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 18px solid #f9f2f2;
+    position: relative;
+    top: 45px;
+    left: 13px;
+    z-index: 999;
+}
+
 .tp-sign-in-dropdown {
     display: block;
     border: 1px solid;
-    background-color: darkgrey;
+    background-color: white;
     width: 300px;
-    position: absolute;
-    top: 50px;
+    position: relative;
+    top: 44px;
     margin-left: -123px;
     height: 276px;
     border-radius: 6px;
@@ -138,13 +151,20 @@
     }
 }
 
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
 .tp-sign-in-formwrapper {
     width: 277px;
     margin: auto;
 }
 
-.tp-sign-in-email,.tp-sign-in-password {
-
+.tp-sign-in-email, .tp-sign-in-password {
     label {
         padding-top: 10px;
         font-size: 14px;
@@ -155,13 +175,13 @@
     position: relative;
     float: right;
     width: 100%;
-    border: 0;
     border-radius: 5px;
     padding: 22px 10px 2px 10px;
     font-size: 17px;
+    border: 1px solid #9e9797;
 }
 
-.tp-sign-in-eyebrow{
+.tp-sign-in-eyebrow {
     position: absolute;
     top: 48px;
     left: 20px;
@@ -173,9 +193,22 @@
     transition-duration: .125s;
 }
 
-.tp-sign-in-form:focus ~ .tp-sign-in-eyebrow {
-    top: 39px;
-    font-size: 13px;
+.tp-sign-in-form:focus ~ .tp-sign-in-eyebrow,
+.tp-sign-in-form.text-entered ~ .tp-sign-in-eyebrow {
+     top: 39px;
+     font-size: 13px;
+ }
+
+.tp-sign-in-password {
+    >.tp-sign-in-eyebrow {
+        top: 131px
+    }
+
+    .tp-sign-in-form:focus ~ .tp-sign-in-eyebrow,
+    .tp-sign-in-form.text-entered ~ .tp-sign-in-eyebrow {
+        top: 122px;
+        font-size: 13px;
+    }
 }
 
 .tp-sign-in-button {

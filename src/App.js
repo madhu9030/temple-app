@@ -12,18 +12,18 @@ import Donations from "./containers/Donations";
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
+      return (
+          <div className="App">
+          <div className="tp-latest-news as-l-container">
+              <marquee>Latest News</marquee>
+          </div>
+
+          <div className="as-l-container tp-carousal-wrapper">
+              <CarouselSlider/>
+          </div>
           <HashRouter>
               <div>
                   <NavBar/>
-                  <div className="tp-latest-news as-l-container">
-                      <marquee>Latest News</marquee>
-                  </div>
-
-                  <div className="as-l-container tp-carousal-wrapper">
-                      <CarouselSlider/>
-                  </div>
                   <div className="tp-body-content">
                       <Switch>
                           <Route exact path="/home" component={Home} />
@@ -32,14 +32,11 @@ class App extends Component {
                           <Route path="/Events" component={Events} />
                           <Route path="/Donations" component={Donations} />
                           <Route path="/Contact" component={Contact} />
-
                       </Switch>
                   </div>
               </div>
           </HashRouter>
-      </div>
-
-        );
+      </div>);
     }
 }
 

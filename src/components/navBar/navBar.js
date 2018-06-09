@@ -21,6 +21,7 @@ class NavBar extends Component {
         super();
         this.handleSignIn = this.handleSignIn.bind(this);
         this.handleLogIn = this.handleLogIn.bind(this);
+        this.focusEle = this.focusEle.bind(this);
         this.state = {
             signIn: false,
             logIn:false
@@ -37,10 +38,17 @@ class NavBar extends Component {
             logIn: !this.state.logIn
         })
     }
+
+    focusEle(e) {
+        if(e.target.value !== '') {
+            e.target.classList.add('text-entered')
+        }else e.target.classList.remove('text-entered')
+    }
     render() {
         const navbarItems = routes.map((route) => (
             <NavbarLink key={route.path} to={route.path} path={route.path} label={route.label}  />
         ));
+
         return (
             <nav className="tp-nav-bar-container">
                 <div className="tp-nav-bar-wrapper">
@@ -57,23 +65,28 @@ class NavBar extends Component {
                         <button type="button"><i className="fa fa-search"></i></button>
                     </div>
                     <div className="tp-sign-in">
-                        {console.log(this.state.signIn)}
                         <button><img
                             src={this.state.logIn ? "https://pbs.twimg.com/profile_images/816010976659206144/Ug6isasc_bigger.jpg"
                             : signLogo}
                             onClick={this.handleSignIn}
                             alt=""/></button>
+                        <div className={this.state.signIn  ? "triangle-up show" : "triangle-up hide"}>
+                        </div>
                         <div className={this.state.signIn  ? "tp-sign-in-dropdown show" : "tp-sign-in-dropdown hide"}>
                             <div className="tp-sign-in-formwrapper">
                                 <div className="tp-sign-in-email">
                                     <label htmlFor="tp-sign-in-email">Email Address:</label>
-                                    <input id="tp-sign-in-email" className="tp-sign-in-form email" type="text"/>
+                                    <input id="tp-sign-in-email"
+                                           onChange={this.focusEle}
+                                           className="tp-sign-in-form email " type="text"/>
                                     <span className="tp-sign-in-eyebrow">Email Address</span>
                                 </div>
                                 <div className="tp-sign-in-password">
                                     <label htmlFor="tp-sign-in-password">Password:</label>
-                                    <input id="tp-sign-in-password" className="tp-sign-in-form password" type="password"/>
-                                    {/*<span className="tp-sign-in-eyebrow">Password</span>*/}
+                                    <input id="tp-sign-in-password"
+                                           onChange={this.focusEle}
+                                           className="tp-sign-in-form password" type="password"/>
+                                    <span className="tp-sign-in-eyebrow">Password</span>
                                 </div>
                                 <button className="tp-sign-in-button tp-button">Sign Up</button>
                                 <button
