@@ -82,7 +82,7 @@
   width: 50px;
   float: right;
   padding-right: 10px; }
-  .tp-sign-in button {
+  .tp-sign-in > button {
     border: 0;
     float: right;
     padding: 0;
@@ -90,8 +90,89 @@
     border-radius: 50%;
     max-width: 38px;
     max-height: 38px; }
-    .tp-sign-in button:hover {
+    .tp-sign-in > button:hover {
       box-shadow: 0px 0px 9px 2px #e0d9d9; }
   .tp-sign-in img {
     width: 38px;
-    height: 38px; }
+    height: 38px;
+    border: 1px solid white;
+    border-radius: 50%; }
+
+.tp-sign-in-dropdown {
+  display: block;
+  border: 1px solid;
+  background-color: darkgrey;
+  width: 300px;
+  position: absolute;
+  top: 50px;
+  margin-left: -123px;
+  height: 276px;
+  border-radius: 6px; }
+  .tp-sign-in-dropdown.show {
+    display: block; }
+  .tp-sign-in-dropdown.hide {
+    display: none; }
+
+.tp-sign-in-formwrapper {
+  width: 277px;
+  margin: auto; }
+
+.tp-sign-in-email label, .tp-sign-in-password label {
+  padding-top: 10px;
+  font-size: 14px; }
+
+.tp-sign-in-form {
+  position: relative;
+  float: right;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  padding: 22px 10px 2px 10px;
+  font-size: 17px; }
+
+.tp-sign-in-eyebrow {
+  position: absolute;
+  top: 48px;
+  left: 20px;
+  color: #888;
+  pointer-events: none;
+  padding: 0;
+  z-index: 1;
+  transition-timing-function: ease-in;
+  transition-duration: .125s; }
+
+.tp-sign-in-form:focus ~ .tp-sign-in-eyebrow {
+  top: 39px;
+  font-size: 13px; }
+
+.tp-sign-in-button {
+  margin-top: 27px;
+  padding: 10px 36px; }
+
+.tp-log-in-button {
+  border: 0;
+  margin-top: 27px;
+  padding: 10px 36px;
+  float: right; }
+
+.tp-button {
+  padding: 10px 36px;
+  background-color: #0070c9;
+  background: linear-gradient(#42a1ec, #0070c9);
+  border: 1px solid #07c;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer; }
+  .tp-button:hover {
+    background-color: #147bcd;
+    background: linear-gradient(#51a9ee, #147bcd);
+    border-color: #1482d0;
+    text-decoration: none; }
+
+.tp-forget-password {
+  display: block;
+  margin-top: 7px;
+  color: #0070c9;
+  float: right; }
+  .tp-forget-password:hover {
+    color: #1482d0; }

@@ -5,5 +5,53 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    top: 80px;
+    top: 120px;
+
 }
+
+body {
+    background-image: url("images/light-backgrounds.jpg");
+}
+
+.as-l-container {
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// carousal styles
+
+.tp-carousal-wrapper {
+    .carousel:last-child {
+        display: none;
+    }
+
+    .legend, .carousel-status {
+        display: none;
+    }
+}
+
+.slider-wrapper.axis-horizontal {
+    height: 350px;
+}
+
+.carousel.carousel-slider {
+    top: 60px;
+}
+
+//
+
+.tp-latest-news {
+    position: relative;
+    top: 55px;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 3px;
+    background-color: orange;
+
+    marquee {
+        padding-top: 13px
+    }
+}
+
+

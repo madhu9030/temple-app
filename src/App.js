@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/navBar/navBar.js';
+import CarouselSlider from './components/carousel/carousel.js';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <NavBar/>
+
+          <div className="tp-latest-news as-l-container">
+              <marquee>Latest News</marquee>
+          </div>
+
+          <div className="as-l-container tp-carousal-wrapper">
+              <CarouselSlider/>
+          </div>
+
           <div className="tp-body-content">
               <div>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
